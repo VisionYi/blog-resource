@@ -1,0 +1,389 @@
+/**
+ * 此為 Tranquilpeak 主題的 css 修改
+ *
+ * 使用說明:
+ *
+ * 1. data-extra-modify = 1，才會啟動側邊欄的修改 (等於 tranquilpeak 裡的_config.yml 中的參數 'extra_modify' 相同)
+ * 2. data-behavior 為原本作者設定的參數
+ *    - data-behavior = 1，會產生手機、平板、電腦、大型螢幕的 sidebar 的版型，同時都會有
+ *    - data-behavior = 2，會產生手機、平板、電腦的 sidebar 版型，電腦、大型螢幕合併同一個
+ *    - data-behavior = 3，只產生平板(邊條)的 sidebar 版型，手機、平板、電腦、大型螢幕合併同一個
+ *    - data-behavior = 4，此也是 1 的看文章時的延伸版，sidebar 版型全都變成隱藏的，但可以點開擴展
+ *    - data-behavior = 5，此也是 2 的看文章時的延伸版，sidebar 版型全都變成隱藏的，但可以點開擴展
+ *    - data-behavior = 6，此也是 3 的看文章時的延伸版，sidebar 版型全都變成隱藏的，但可以點開擴展
+ */
+
+/* 字型樣式修改 */
+
+body, h1, h2, h3, h4, h5, h6, p,
+.post .post-content,
+.postShorten .postShorten-content,
+.postShorten .postShorten-excerpt {
+    font-family: "Helvetica Neue", Helvetica, Arial, "Open Sans", "Microsoft JhengHei", sans-serif;
+    letter-spacing: -0.0035em;
+}
+
+.scrollbar[data-extra-modify="1"]::-webkit-scrollbar {
+    height: 0;
+    width: 0;
+}
+
+/* 主文章與 main 內容的修改 */
+
+#main .category-link {
+    border-bottom: 1px dotted #ccc;
+    color: #6e7681;
+    font-family: Open Sans, Microsoft JhengHei, sans-serif;
+    text-decoration: none;
+}
+
+#main .category-link:hover {
+    color: #349ef3;
+}
+
+#main a.link-unstyled:hover {
+    color: #000 !important;
+}
+
+#main .postShorten .postShorten-excerpt_link {
+    font-size: 1.4rem;
+}
+
+#main .postShorten .postShorten-excerpt_link .icon {
+    font-size: 16px;
+    margin-right: 6px;
+}
+
+
+/* sidebar 側邊欄的修改調整 */
+
+#sidebar[data-extra-modify="1"] {
+    background-image: url('/assets/images/cover.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-transition: transform 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+    transition: transform 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+    z-index: 60;
+}
+
+#sidebar[data-extra-modify="1"] .sidebar-profile {
+    height: auto;
+    padding: 0;
+    margin-top: 30px;
+}
+
+#sidebar[data-extra-modify="1"] .sidebar-profile .sidebar-profile-name {
+    font-size: 1.1em;
+}
+
+#sidebar[data-extra-modify="1"] ul.sidebar-buttons li.sidebar-button .sidebar-button-link:hover {
+    color: #349ef3;
+}
+
+#sidebar[data-behavior="1"][data-extra-modify="1"].pushed,
+#sidebar[data-behavior="2"][data-extra-modify="1"].pushed,
+#sidebar[data-behavior="4"][data-extra-modify="1"].pushed,
+#sidebar[data-behavior="5"][data-extra-modify="1"].pushed {
+    -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0 3px 10px, rgba(0, 0, 0, 0.23) 0 3px 10px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0 3px 10px, rgba(0, 0, 0, 0.23) 0 3px 10px;
+}
+
+#blog .post-header-cover[data-extra-modify="1"].pushed,
+#header[data-behavior="1"][data-extra-modify="1"].pushed,
+#header[data-behavior="2"][data-extra-modify="1"].pushed,
+#header[data-behavior="4"][data-extra-modify="1"].pushed,
+#header[data-behavior="5"][data-extra-modify="1"].pushed,
+#bottom-bar[data-behavior="1"][data-extra-modify="1"].pushed,
+#bottom-bar[data-behavior="2"][data-extra-modify="1"].pushed,
+#bottom-bar[data-behavior="4"][data-extra-modify="1"].pushed,
+#bottom-bar[data-behavior="5"][data-extra-modify="1"].pushed,
+#main[data-behavior="1"][data-extra-modify="1"].pushed,
+#main[data-behavior="2"][data-extra-modify="1"].pushed,
+#main[data-behavior="4"][data-extra-modify="1"].pushed,
+#main[data-behavior="5"][data-extra-modify="1"].pushed
+{
+    -webkit-transform: none;
+    -moz-transform: none;
+    transform: none;
+}
+
+#header[data-extra-modify="1"],
+#bottom-bar[data-extra-modify="1"] {
+    background-color: rgba(255,255,255,0.9);
+}
+
+#bottom-bar[data-extra-modify="1"] {
+    height: 0;
+}
+
+
+/* 側邊攔顯示時主畫面會有的陰影 */
+
+#shade {
+    display: none;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 50;
+}
+
+
+/**
+ * 在側邊攔自行增加的友站與外地連結元件 sidebar-horizon
+ * 此需要搭配 @media 哪個尺寸的螢幕大小去作適合的顯示
+ */
+
+#sidebar .sidebar-horizon {
+    display: none;
+    padding: 0 23px;
+}
+
+.sidebar-horizon .sidebar-title {
+    color: #ebebeb;
+    display: block;
+    font-size: 1.4rem;
+    margin: 0 0 1px 0;
+}
+
+.sidebar-horizon ul,
+.sidebar-horizon ul li {
+    line-height: normal;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar-horizon ul.sidebar-outer-links {
+    border-top: 1px solid #ebebeb;
+    display: block;
+    padding: 10px 0;
+    text-align: left;
+}
+
+.sidebar-horizon ul.sidebar-outer-links li.item-link {
+    display: inline-block;
+    margin: 0 5px 10px 5px;
+    line-height: 1.8rem;
+}
+
+.sidebar-horizon ul.sidebar-outer-links li.item-link a {
+    color: #ebebeb;
+    text-decoration: none;
+}
+
+.sidebar-horizon ul.sidebar-outer-links li.item-link a:hover {
+    color: #349ef3;
+}
+
+.sidebar-horizon ul.sidebar-outer-links li.item-link .icon{
+    background-color: #9eabb3;
+    border-radius: 50%;
+    font-size: 2rem;
+    line-height: 34.5px;
+    height: 34.5px;
+    width: 34.5px;
+    text-align: center;
+    text-shadow: 0 1px #333;
+}
+
+#about #about-card #about-card-picture {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    margin-bottom: 8px;
+}
+
+@media only screen and (max-width: 767px) {
+
+    #sidebar[data-behavior="1"][data-extra-modify="1"] .sidebar-horizon,
+    #sidebar[data-behavior="2"][data-extra-modify="1"] .sidebar-horizon,
+    #sidebar[data-behavior="4"][data-extra-modify="1"] .sidebar-horizon,
+    #sidebar[data-behavior="5"][data-extra-modify="1"] .sidebar-horizon {
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 1023px) and (min-width: 768px) {
+
+    #sidebar[data-behavior="4"][data-extra-modify="1"] .sidebar-horizon,
+    #sidebar[data-behavior="5"][data-extra-modify="1"] .sidebar-horizon {
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 1279px) and (min-width: 1024px) {
+
+    #sidebar[data-behavior="1"][data-extra-modify="1"] .sidebar-horizon,
+    #sidebar[data-behavior="2"][data-extra-modify="1"] .sidebar-horizon,
+    #sidebar[data-behavior="4"][data-extra-modify="1"] .sidebar-horizon,
+    #sidebar[data-behavior="5"][data-extra-modify="1"] .sidebar-horizon {
+        display: block;
+    }
+}
+
+@media only screen and (min-width: 1280px) {
+
+    #sidebar[data-behavior="1"][data-extra-modify="1"] .sidebar-profile,
+    #sidebar[data-behavior="4"][data-extra-modify="1"] .sidebar-profile {
+        margin-top: 0;
+    }
+
+    #sidebar[data-behavior="1"][data-extra-modify="1"] .sidebar-horizon,
+    #sidebar[data-behavior="4"][data-extra-modify="1"] .sidebar-horizon{
+        display: inline-block;
+        width: 49%;
+        padding: 0;
+    }
+
+    #sidebar[data-behavior="2"][data-extra-modify="1"] .sidebar-horizon,
+    #sidebar[data-behavior="5"][data-extra-modify="1"] .sidebar-horizon {
+        display: block;
+    }
+
+    #sidebar[data-behavior="1"][data-extra-modify="1"] .sidebar-profile .sidebar-profile-picture,
+    #sidebar[data-behavior="2"][data-extra-modify="1"] .sidebar-profile .sidebar-profile-picture,
+    #sidebar[data-behavior="4"][data-extra-modify="1"] .sidebar-profile .sidebar-profile-picture,
+    #sidebar[data-behavior="5"][data-extra-modify="1"] .sidebar-profile .sidebar-profile-picture {
+        border-radius: 50%;
+        height: 110px;
+        width: 110px;
+    }
+}
+
+
+/* 修改內部發文的主頁面 (post) */
+
+.post .post-content .main-content-wrap h1 {
+    padding-bottom: 0.1em;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 0.9em;
+}
+
+.postShorten-excerpt :not(blockquote):not(.alert) > p,
+.post .post-content :not(blockquote):not(.alert) > p {
+    margin-bottom: 0.4em;
+}
+
+.postShorten-excerpt > table,
+.post .post-content .main-content-wrap > table {
+    margin-bottom: 1em;
+}
+
+.postShorten-excerpt > table tr:nth-child(2n),
+.post .post-content .main-content-wrap > table tr:nth-child(2n) {
+    background-color: #f6f8fa;
+}
+
+.post .post-content h2 {
+    border-bottom: 1px solid #eee;
+}
+
+.fancybox img {
+    box-sizing: border-box;
+    margin: auto;
+    padding: 3px;
+    border: 1px solid #ddd;
+    max-width: 100%;
+}
+
+code {
+    font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+    background-color: rgba(0, 0, 0, 0.04);
+    border-radius: 3px;
+    line-height: normal;
+    padding: 0.2em 0.35em;
+    font-size: 85%;
+}
+
+mark,
+.highlight-text {
+    border-radius: 4px;
+    padding: 2px 5px;
+}
+
+mark {
+    background-color: #ffc;
+}
+
+blockquote {
+    border-left: 0.25em solid #ddd;
+    color: #777;
+    margin-bottom: 16px;
+}
+
+/* 程式碼區塊的顯示 */
+
+.codeblock .code,
+.codeblock .gutter,
+.codeblock .tag,
+.codeblock pre,
+figure.highlight .code,
+figure.highlight .gutter,
+figure.highlight .tag,
+figure.highlight pre {
+    font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+.codeblock .gutter,
+figure.highlight .gutter {
+    border-right: 3px solid #6ce26c !important;
+    cursor: default;
+    min-width: 20px;
+    padding-right: 8px;
+    text-align: right;
+    user-select: none;
+}
+
+.codeblock .gutter pre,
+figure.highlight .gutter pre {
+    cursor: default;
+}
+
+.codeblock .line,
+figure.highlight .line {
+    height: 1.4em;
+}
+
+.codeblock .tag,
+figure.highlight .tag {
+    display: inline;
+}
+
+.codeblock .comment,
+figure.highlight .comment {
+    font-style: italic;
+}
+
+.codeblock .attr,
+figure.highlight .attr {
+    color: #795da3;
+}
+
+.codeblock .string,
+figure.highlight .string {
+    color: #df5000;
+}
+
+.codeblock .literal,
+figure.highlight .literal {
+    color: #0086b3;
+}
+
+.codeblock.css .code .selector-id,
+.codeblock.css .code .selector-attr,
+.codeblock.css .code .selector-class,
+figure.highlight.css .code .selector-id,
+figure.highlight.css .code .selector-attr,
+figure.highlight.css .code .selector-class {
+    color: #795da3;
+}
+
+@media only screen and (min-width: 768px) {
+    .post-header-cover .post-header .post-title {
+        font-size: 5.2rem;
+    }
+}

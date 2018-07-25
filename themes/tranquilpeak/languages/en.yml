@@ -1,0 +1,73 @@
+# date format displayed everywhere in the blog
+date_format: "YYYY-MM-DD"
+
+global:
+    home: "Home"
+    categories: "Categories"
+    category: "Category"
+    tags: "Tags"
+    tag: "Tag"
+    archives: "Archives"
+    search: "Search"
+    about: "About"
+    author_picture: "Author's picture"
+    github: "GitHub"
+    stack_overflow: "Stack Overflow"
+    twitter: "Twitter"
+    facebook: "Facebook"
+    google_plus: "Google Plus"
+    linkedin: "LinkedIn"
+    mail: "Email"
+    rss: "RSS"
+    share_on_google_plus: "Share on Google Plus"
+    share_on_facebook: "Share on Facebook"
+    share_on_twitter: "Share on Twitter"
+    search_category: "Search category"
+    search_tag: "Search tag"
+    search_date: "Search date (YYYY/MM/DD)"
+    posts_found:
+        zero: "no post found"
+        one: "1 post found"
+        other: "{n} posts found"
+    categories_found:
+        zero: "no category found"
+        one: "1 cartegory found"
+        other: "{n} categories found"
+    tags_found:
+        zero: "no tag found"
+        one: "1 tag found"
+        other: "{n} tags found"
+
+pagination:
+    page: "page %d"
+    of: "of %d"
+    newer_posts: "Newer Posts"
+    older_posts: "Older Posts"
+    previous: "Previous"
+    next: "Next"
+
+post:
+    no_title : "no title"
+    categorized_in: "in"
+    tagged_in: "Tagged in"
+    toc: "Table of Contents"
+    read_more: "Continue reading"
+    go_to_website: "Go to website"
+    comment_and_share: "Comments"
+
+author:
+    # Your biography (Markdown and HTML supported)
+    bio: "
+            悠遊於程式 Coding 之間
+            <br />
+            熱愛興趣，尋找熱情，大膽擁抱它
+            <br />
+            熟悉 Web、JavaScript、PHP、略懂 Python
+            <br />
+            現在處於前端開發，但對後端工程也有者熱情
+            <br />
+            <br />
+            *Welcome to my personal blog.*
+        "
+    # Your job
+    job: "Engineer"

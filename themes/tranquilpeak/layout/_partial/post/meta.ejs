@@ -1,0 +1,14 @@
+<div class="<%= (classes ? classes.join(' ') : '') %>">
+    <i class="fa fa-calendar" style="margin-right: 5px;"></i>
+    <time itemprop="datePublished" datetime="<%= post.date.format() %>">
+	<% if (post.lang) { %>
+		    <%= post.date.locale(post.lang).format(__('date_format')) %>
+    	<% } else { %>
+		    <%= post.date.locale(page.lang).format(__('date_format')) %>
+    	<% } %>
+    </time>
+    <% if ((post.categories) && (post.categories.length > 0)) { %>
+        <i class="fa fa-th-list" style="margin: 0 5px 0 20px;"></i>
+        <%- partial('category', {categories: post.categories})%>
+    <% } %>
+</div>
