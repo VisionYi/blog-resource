@@ -8,6 +8,7 @@
   "scripts": {
     "update-posts": "hexo algolia",
     "server": "hexo clean && hexo s",
+    "build": "hexo clean && hexo generate",
     "deploy": "hexo clean && hexo d"
   },
   "dependencies": {
