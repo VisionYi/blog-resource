@@ -35,8 +35,8 @@ keywords:
 <!-- more -->
 
 ## 專案連結
-- [Live dome](https://github.com/VisionYi/F2E-filter)
-- [Source code](https://visionyi.github.io/F2E-filter)
+- [Live dome](https://visionyi.github.io/F2E-filter)
+- [Source code](https://github.com/VisionYi/F2E-filter)
 
 ## 技術開發時遇到的坑 & 筆記內容
 ### 網頁切版、設計
@@ -44,6 +44,19 @@ keywords:
   - 隨著頁面寬度改變而改變高度
   - 可維持比例 16 : 9
   - 可外框固定大小後讓圖片置中
+
+- 使用 CSS 截斷文字內容，自動限制行數
+  - 可搭配 RWD 響應式設計，當寬度減少時，也會自動截斷更多內容
+  - 參考: [Line Clampin’ (Truncating Multiple Line Text)](https://css-tricks.com/line-clampin/)
+  - 以下為基本配置:
+
+```css
+.line-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* 限制行數 */
+  -webkit-box-orient: vertical;  /* 內容為橫向字，垂直排列下去 */
+}
+```
 
 ### JS 功能 & Vue 的使用
 - vue 生命週期 mounted 的使用時機
